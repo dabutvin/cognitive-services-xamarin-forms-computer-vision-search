@@ -95,6 +95,7 @@ namespace VisualSearchApp
             catch( Exception exception )
             {
                 BingSearchKeyEntry.BackgroundColor = Color.Red;
+                await DisplayAlert("Error", exception.Message, "OK");
                 Console.WriteLine($"ERROR: {exception.Message}");
             }
         }

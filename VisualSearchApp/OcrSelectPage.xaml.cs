@@ -82,8 +82,9 @@ namespace VisualSearchApp
 				});
 				photoByteArray = MediaFileToByteArray(photoMediaFile);
 			}
-			catch
+			catch (Exception exception)
 			{
+				Console.WriteLine($"ERROR: {exception.Message}");
                 error = true;
 			}
 
@@ -122,7 +123,7 @@ namespace VisualSearchApp
 			else
 			{
 				await DisplayAlert("Error", "No camera found", "OK");
-
+				Console.WriteLine($"ERROR: No camera found");
 			}
 			return photoByteArray;
 		}

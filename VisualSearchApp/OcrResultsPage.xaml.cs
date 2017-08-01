@@ -150,6 +150,7 @@ namespace VisualSearchApp
 		protected async Task ErrorAndPop(string title, string text, string button)
 		{
 			await DisplayAlert(title, text, button);
+            Console.WriteLine($"ERROR: {text}");
 			await Task.Delay(TimeSpan.FromSeconds(0.1d));
 			await Navigation.PopAsync(true);
 		}
