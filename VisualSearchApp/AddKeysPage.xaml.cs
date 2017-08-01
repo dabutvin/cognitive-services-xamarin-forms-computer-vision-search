@@ -118,6 +118,18 @@ namespace VisualSearchApp
                 await DisplayAlert("Error", "One or more of your keys are invalid. Please update them and try again", "OK");
             }
         }
+
+        void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+               AppConstants.SetOcrLocation(picker.Items[selectedIndex]);
+            }
+        }
+
         #endregion
     }
 }

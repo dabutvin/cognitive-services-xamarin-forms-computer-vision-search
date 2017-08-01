@@ -26,13 +26,19 @@
         /// [language=en] Text in image is in English. 
         /// [detectOrientation=true] Improve results by detecting orientation
         /// </summary>
-        public const string ComputerVisionApiOcrUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=en&detectOrientation=true";
+        public static string ComputerVisionApiOcrUrl = "";
 
         /// <summary>
         /// Url of the Computer Vision API handwritten text recognition method
         /// [handwriting=true] Text in image is handwritten. Set to false for printed text.
         /// </summary>
-		public const string ComputerVisionApiHandwritingUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/recognizeText?handwriting=true";
+		public static string ComputerVisionApiHandwritingUrl = "";
+
+        public static void SetOcrLocation(string location)
+        {
+            ComputerVisionApiOcrUrl = $"https://{location}.api.cognitive.microsoft.com/vision/v1.0/ocr?language=en&detectOrientation=true";
+            ComputerVisionApiHandwritingUrl = $"https://{location}.api.cognitive.microsoft.com/vision/v1.0/recognizeText?handwriting=true";
+        }
 
         /// <summary>
         /// User's API Key for the Computer Vision API. Not a constant because it can get set in the app 

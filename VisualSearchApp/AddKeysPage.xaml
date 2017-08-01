@@ -10,6 +10,20 @@
                FontSize="Large"/>
         <Label Text="You can also set these values in the AppConstants.cs file of this project"
                FontSize="Large"/>
+
+        <Picker x:Name="servers"  
+                Title="Computer Vision API Server Location" 
+                SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                Margin="0, 20, 0, -40">
+            <Picker.Items>
+                <x:String>westus</x:String>
+                <x:String>eastus2</x:String>
+                <x:String>westcentralus</x:String>
+                <x:String>westeurope</x:String>
+                <x:String>southeastasia</x:String>
+            </Picker.Items>
+        </Picker>
+
         <Entry Placeholder="Computer Vision API Key"
                IsPassword="False"
                Completed="CheckComputerVisionKey"
