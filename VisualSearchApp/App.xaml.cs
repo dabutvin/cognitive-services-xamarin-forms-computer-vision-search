@@ -11,8 +11,11 @@ namespace VisualSearchApp
         public App()
         {
             InitializeComponent();
-            //ApiKeys.computerVisionKey = <Add Your Cognitive Services Vision API Key Here>;
-            //ApiKeys.bingSearchKey = <Add Your Bing Search API Key Here>;
+            //AppConstants.ComputerVisionApiKey = <Add your Cognitive Services Vision API Key Here>
+            //AppConstants.BingWebSearchApiKey = <Add your Bing Web Search API Key Here>
+            
+            //Applicable OCR server locations (at time of writing) are: westus, eastus2, westcentralus, westeurope, southeastasia 
+            //AppConstants.SetOcrLocation(<add the location of your Computer Vision server here>);
 
             MainPage = new NavigationPage(new OcrSelectPage());
         }

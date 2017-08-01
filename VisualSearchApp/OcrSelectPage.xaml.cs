@@ -30,7 +30,9 @@ namespace VisualSearchApp
             base.OnAppearing();
 			if (isFirstPageLoad)
 			{
-                if (String.IsNullOrEmpty(AppConstants.ComputerVisionApiKey) || String.IsNullOrEmpty(AppConstants.BingWebSearchApiKey))
+                if (String.IsNullOrEmpty(AppConstants.ComputerVisionApiKey) 
+                    || String.IsNullOrEmpty(AppConstants.BingWebSearchApiKey)
+                    || String.IsNullOrEmpty(AppConstants.ComputerVisionApiOcrUrl))
 				{
 					await Navigation.PushModalAsync(new AddKeysPage());
 				}
